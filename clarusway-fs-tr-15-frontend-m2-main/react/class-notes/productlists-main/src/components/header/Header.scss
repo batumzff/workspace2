@@ -1,0 +1,30 @@
+.header {
+  margin-top: 50px;
+ text-align: center;
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .category-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+   
+    .btn {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #333;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      &:hover {
+        background-color: #333;
+        color: #fff;
+      }
+    }
+  }
+}

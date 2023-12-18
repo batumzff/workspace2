@@ -10,6 +10,8 @@ import Fullstack from "./pages/Fullstack"
 import Aws from "./pages/Aws"
 import Frontend from "./pages/Frontend"
 import Backend from "./pages/Backend"
+import Login from "./pages/Login"
+import PrivateRouter from "./pages/PrivateRouter"
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
@@ -20,8 +22,14 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/people" element={<People />} />
-        <Route path="/people/:idx" element={<PersonDetail />} />
+
+        <Route path="/people" element={<PrivateRouter />}>
+          <Route index path="" element={<People />} />
+          <Route path=":idx" element={<PersonDetail />} />
+        </Route>
+
+        <Route path="/login" element={<Login />} />
+
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/paths" element={<Paths />}>

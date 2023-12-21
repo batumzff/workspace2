@@ -15,9 +15,15 @@ export const initialState = {
           loading: false,
           error: "",
         }
-  
+      case "FAIL":
+        return {
+          ...initialState,
+          catImage: "",
+          loading: false,
+          error: action.payload,
+        }
       default:
-        break
+        return initialState
     }
   }
   

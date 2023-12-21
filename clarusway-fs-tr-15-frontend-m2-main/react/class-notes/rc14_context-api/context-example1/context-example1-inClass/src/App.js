@@ -14,6 +14,7 @@ function App() {
   const [user, setUser] = useState({ email: "", password: "" })
 
   return (
+    //? 2.Uygulamayi LoginCOntext ile sarmaladik.
     <LoginContext.Provider value={{ user, setUser }}>
       <BrowserRouter>
         <Navs />

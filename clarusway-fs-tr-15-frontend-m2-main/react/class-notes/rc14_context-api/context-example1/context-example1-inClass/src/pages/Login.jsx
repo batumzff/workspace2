@@ -1,13 +1,21 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import Form from "react-bootstrap/Form"
+import { LoginContext } from "../context/LoginContext"
+import { useNavigate } from "react-router-dom"
 
 const Login = () => {
   // const [user, setUser] = useState({ email: "", password: "" })
 
+  //? 3. Login Context'in tüketilmesi (consuming)
+  const { user, setUser } = useContext(LoginContext)
+  const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    navigate("/people")
+    // navigate(-1)  //? geldigin yere geri don.
   }
 
   console.log(user)

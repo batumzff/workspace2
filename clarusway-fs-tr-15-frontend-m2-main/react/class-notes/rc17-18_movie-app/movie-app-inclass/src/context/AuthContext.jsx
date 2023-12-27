@@ -32,4 +32,21 @@ const AuthContextProvider = ({ children }) => {
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
 };
 
+ //* https://console.firebase.google.com/
+  //* => Authentication => sign-in-method => enable Email/password
+  //! Email/password ile girişi enable yap
+  const signIn = async (email, password) => {
+    try {
+      //? mevcut kullanıcının giriş yapması için kullanılan firebase metodu
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(userCredential);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 export default AuthContextProvider;

@@ -22,7 +22,9 @@ export const useAuthContext = () => {
 };
 
 const AuthContextProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(false);
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem("user"))
+  );
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -77,9 +79,14 @@ const AuthContextProvider = ({ children }) => {
         console.log(user);
         const { email, displayName, photoURL } = user;
         setCurrentUser({ email, displayName, photoURL });
+        sessionStorage.setItem(
+          "user",
+          JSON.stringify({ email, displayName, photoURL })
+        );
       } else {
         // User is signed out
         setCurrentUser(false);
+        sessionStorage.removeItem("user");
       }
     });
   };

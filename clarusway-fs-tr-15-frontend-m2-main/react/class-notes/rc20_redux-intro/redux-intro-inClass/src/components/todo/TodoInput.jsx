@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux"
 import { addTodo } from "../../store/todoReducer"
 
 const TodoInput = () => {
@@ -12,6 +12,7 @@ const TodoInput = () => {
     setText("")
   }
 
+  console.log(text)
   return (
     <form onSubmit={handleSubmit}>
       <input

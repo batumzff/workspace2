@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux"
 import "./Counter.css"
 
 import {
-  INC,
-  DEC,
-  CLR,
+  // INC,
+  // DEC,
+  // CLR,
   increment,
   clear,
   decrement,
@@ -12,7 +12,8 @@ import {
 
 const Counter = () => {
   //? consuming
-  const count = useSelector((state) => state.count)
+  // const count = useSelector((state) => state.count)
+  const count = useSelector((state) => state.counter.count)
   const dispatch = useDispatch()
 
   return (
